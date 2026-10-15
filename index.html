@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Mahasiswa</title>
+    <meta
+      name="description"
+      content="Portofolio mahasiswa Teknik Informatika — proyek, keahlian, pengalaman, dan kontak."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Indikator progres scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="navbar" id="navbar">
+      <div class="container navbar__inner">
+        <a href="#hero" class="navbar__brand" id="navBrand">Portofolio</a>
+
+        <nav class="navbar__nav" id="navMenu" aria-label="Navigasi utama">
+          <a href="#tentang" class="navbar__link">Tentang</a>
+          <a href="#pendidikan" class="navbar__link">Pendidikan</a>
+          <a href="#keahlian" class="navbar__link">Keahlian</a>
+          <a href="#proyek" class="navbar__link">Proyek</a>
+          <a href="#pengalaman" class="navbar__link">Pengalaman</a>
+          <a href="#sertifikat" class="navbar__link">Sertifikat</a>
+          <a href="#kontak" class="navbar__link navbar__link--cta">Kontak</a>
+        </nav>
+
+        <div class="navbar__actions">
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Ganti mode terang/gelap"
+            title="Ganti tema"
+          >
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <path
+                d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"
+              />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11Z" />
+            </svg>
+          </button>
+
+          <button
+            class="icon-btn navbar__burger"
+            id="menuToggle"
+            type="button"
+            aria-label="Buka menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="hero">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="hero__badge" id="heroBadge">
+              <span class="hero__dot"></span>
+              <span id="heroBadgeText">Terbuka untuk magang</span>
+            </p>
+            <h1 class="hero__title">
+              Hai, saya <span class="text-gradient" id="heroNama">—</span>
+            </h1>
+            <p class="hero__role" id="heroGelar">—</p>
+            <p class="hero__tagline" id="heroTagline">—</p>
+
+            <div class="hero__meta" id="heroMeta"></div>
+
+            <div class="hero__actions">
+              <a href="#proyek" class="btn btn--primary">
+                Lihat Proyek
+                <svg viewBox="0 0 24 24" class="btn__icon" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a href="#" class="btn btn--ghost" id="heroCv" download>
+                Unduh CV
+                <svg viewBox="0 0 24 24" class="btn__icon" aria-hidden="true">
+                  <path d="M12 4v11M7 11l5 5 5-5M5 20h14" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="hero__social" id="heroSocial"></div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="avatar" id="avatar"></div>
+            <div class="hero__stats" id="heroStats"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TENTANG ============ -->
+      <section class="section" id="tentang">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">01 — Perkenalan</span>
+            <h2 class="section__title">Tentang Saya</h2>
+          </div>
+
+          <div class="about">
+            <div class="about__text reveal" id="aboutText"></div>
+            <aside class="about__side reveal">
+              <h3 class="about__side-title">Minat &amp; Fokus</h3>
+              <div class="chips" id="aboutMinat"></div>
+              <hr class="about__divider" />
+              <ul class="about__facts" id="aboutFacts"></ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PENDIDIKAN ============ -->
+      <section class="section section--alt" id="pendidikan">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">02 — Latar Belakang</span>
+            <h2 class="section__title">Riwayat Pendidikan</h2>
+          </div>
+          <div class="timeline" id="educationList"></div>
+        </div>
+      </section>
+
+      <!-- ============ KEAHLIAN ============ -->
+      <section class="section" id="keahlian">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">03 — Kemampuan</span>
+            <h2 class="section__title">Keahlian Teknis</h2>
+          </div>
+          <div class="skills" id="skillsList"></div>
+        </div>
+      </section>
+
+      <!-- ============ PROYEK ============ -->
+      <section class="section section--alt" id="proyek">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">04 — Karya</span>
+            <h2 class="section__title">Proyek Pilihan</h2>
+            <p class="section__subtitle">
+              Beberapa proyek kuliah dan pribadi yang pernah saya kerjakan.
+            </p>
+          </div>
+
+          <div class="filters reveal" id="projectFilters"></div>
+          <div class="projects" id="projectList"></div>
+        </div>
+      </section>
+
+      <!-- ============ PENGALAMAN ============ -->
+      <section class="section" id="pengalaman">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">05 — Jejak Langkah</span>
+            <h2 class="section__title">Pengalaman &amp; Organisasi</h2>
+          </div>
+          <div class="timeline" id="experienceList"></div>
+        </div>
+      </section>
+
+      <!-- ============ SERTIFIKAT ============ -->
+      <section class="section section--alt" id="sertifikat">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">06 — Pembelajaran</span>
+            <h2 class="section__title">Sertifikat &amp; Pelatihan</h2>
+          </div>
+          <div class="certificates" id="certificateList"></div>
+        </div>
+      </section>
+
+      <!-- ============ KONTAK ============ -->
+      <section class="section" id="kontak">
+        <div class="container">
+          <div class="contact reveal">
+            <div class="contact__info">
+              <span class="section__eyebrow">07 — Kontak</span>
+              <h2 class="section__title" id="contactTitle">Mari Terhubung</h2>
+              <p class="contact__desc" id="contactDesc"></p>
+              <ul class="contact__list" id="contactList"></ul>
+            </div>
+
+            <form class="contact__form" id="contactForm" novalidate>
+              <div class="field">
+                <label for="namaPengirim">Nama</label>
+                <input type="text" id="namaPengirim" name="nama" placeholder="Nama Anda" required />
+              </div>
+              <div class="field">
+                <label for="emailPengirim">Email</label>
+                <input
+                  type="email"
+                  id="emailPengirim"
+                  name="email"
+                  placeholder="email@contoh.com"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="pesanPengirim">Pesan</label>
+                <textarea
+                  id="pesanPengirim"
+                  name="pesan"
+                  rows="5"
+                  placeholder="Tulis pesan Anda di sini..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Kirim Pesan</button>
+              <p class="form-note" id="formNote" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p id="footerText">© <span id="footerYear"></span> — Portofolio</p>
+        <div class="footer__social" id="footerSocial"></div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Kembali ke atas">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+    </button>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
